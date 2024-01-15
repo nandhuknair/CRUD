@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-container" id="login-form">
+          <h1>Add user by your choice</h1>
+          <form  action="/add" method="post" id="form-id">
+           
+            <label for="username" id="error-name">Username</label>
+            <input type="text" id="name" name="name" value="" onkeyup="validateName()">
+            <label for="username" id="error-email">Email</label>
+            <input type="text" id="email" name="email" value="" onkeyup="validateEmail()">
+            <label for="password" id="error-password">Password</label>
+            <input type="password" id="password" name="password" value="" onkeyup="validatePassword()">
+
+           
+            <p><%= error %> </p>
+            <button type="submit">Add ↩️</button>
+            
+          </form>
+          
+        </div>
+        <script src="/javascript/frontendvalidation.js"></script>
+        <script>
+            document.getElementById('form-id').addEventListener('submit', function(event) {
+                let name = document.getElementById('name').value;
+                let email = document.getElementById('email').value;
+                let password = document.getElementById('password').value;
+                let isNameValid = validateName();
+                let isEmailValid = validateEmail();
+                let isPasswordValid = validatePassword();
+                
+                if(!(isNameValid && isEmailValid && isPasswordValid)){
+                    event.preventDefault();
+                }
+            });
+        </script>
+
+
+    </body>
+    </html>
+    

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/log.css">
+    <link href="assets/img/favicon.png" rel="icon">
+</head>
+<body>
+    <div class="login-box">
+        <div class="img-center">
+        <img src="/images/enter.png" alt="login-user" height="70px" width="70px">  
+        <h2 style="padding-left: 5%;">ADMIN Login</h2></div> 
+        <form action="/adminlogin" method="post" id="form-id">
+          <div class="user-box">
+            <input type="text" name="email" required="" id="email" onkeyup="validateEmail()">
+            <label id="error-email">Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required="" id="password" onkeyup="validatePassword()">
+            <label id="error-password">Password</label>
+          </div> 
+          <input id="sub" type="submit" value="Login">
+          <p style="color: rgb(176, 0, 0);"> <%= error %></p>
+        </form> 
+        <p class="notUser">If you are not a user ? <a href="/signup" style="color: #ffffff60" , >Signup</a> </p> 
+      </div>
+    <script src="/javascript/frontendvalidation.js"></script>
+    <script>
+      document.getElementById('form-id').addEventListener('submit',event=> {
+        let email = document.getElementById('email').value
+        let password = document.getElementById('password').value
+        let isEmaileValid = validateEmail(email)
+        let isPasswordValid = validatePassword(password)
+        if(!(isEmaileValid && isPasswordValid)){
+          event.preventDefault()
+        }
+      })
+    </script>
+    </body>
+    </html>
+    
+
+  
+
+
+
+
+

@@ -1,0 +1,2 @@
+After completeing this project came to know some ideas about crud operation (Create, Read, Update, Delete) Login page, Signup page, Home page, Admin login page, Admin page These pages included in this page 
+This will definitely help you to atain a basic knowledge about the crud operation for the beginers who going start the fully functionign ecomerce website
